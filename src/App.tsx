@@ -1,12 +1,16 @@
 import { useMemo, useState } from "react";
-import { App as AntApp, Badge, Button } from "antd";
+import { App as AntApp, Badge, Button, Tag } from "antd";
+import { GithubOutlined } from "@ant-design/icons";
 import ImportStep from "./components/ImportStep";
 import ConfigStep from "./components/ConfigStep";
 import ExportStep from "./components/ExportStep";
+import { openUrl } from "./commands";
 import { DEFAULT_FONT_CONFIG, DEFAULT_GLOBAL_CONFIG } from "./types";
 import type { FontConfig, GlobalConfig, FontItem } from "./types";
 
 const STEPS = ["导入字体", "配置", "导出"];
+
+const GITHUB_URL = "https://github.com/adssadax-1/mc-font-workshop";
 
 export default function App() {
   const [step, setStep] = useState(0);
@@ -66,6 +70,18 @@ export default function App() {
           ⛏ MC 字体包工坊
         </div>
         <div className="actions">
+          <Tag color="green" style={{ marginRight: 4 }}>
+            开源
+          </Tag>
+          <Button
+            type="primary"
+            size="small"
+            ghost
+            icon={<GithubOutlined />}
+            onClick={() => void openUrl(GITHUB_URL)}
+          >
+            GitHub 项目
+          </Button>
           <Badge
             count={fonts.length}
             showZero

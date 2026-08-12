@@ -126,6 +126,16 @@ async fn convert_font(app: tauri::AppHandle, path: String) -> Result<ConvertResu
     .map_err(|e| format!("转换任务异常: {e}"))?
 }
 
+/// 用系统默认浏览器打开链接。
+#[tauri::command]
+fn open_url(url: String) -> Result<(), String> {
+    std::process::Command::new("cmd")
+        .args(["/c", "start", "", &url])
+        .spawn()
+        .map_err(|e| format!("无法打开链接: {e}"))?;
+    Ok(())
+}
+
 /// 在资源管理器中定位并选中文件（Windows）。
 #[tauri::command]
 fn open_in_explorer(path: String) -> Result<(), String> {
@@ -146,6 +156,7 @@ pub fn run() {
             convert_font,
             export_pack,
             export_multi,
+            open_url,
             open_in_explorer
         ])
         .run(tauri::generate_context!())

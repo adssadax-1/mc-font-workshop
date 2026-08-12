@@ -69,6 +69,11 @@ export function openInExplorer(path: string): Promise<void> {
   return invoke<void>("open_in_explorer", { path });
 }
 
+/** Rust：用系统默认浏览器打开链接 */
+export function openUrl(url: string): Promise<void> {
+  return invoke<void>("open_url", { url });
+}
+
 /** 格式化文件大小 */
 export function formatBytes(bytes: number): string {
   if (bytes < 1024) return `${bytes} B`;
