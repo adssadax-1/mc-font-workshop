@@ -90,8 +90,14 @@ export default function App() {
           >
             <span style={{ paddingRight: 10 }}>字体</span>
           </Badge>
-          <Button type="link" size="small" href="https://github.com/adssadax-1/mc-content-localizer" target="_blank">
-            参考: MC 汉化工坊
+          <Button
+            type="link"
+            size="small"
+            onClick={() =>
+              void openUrl("https://github.com/adssadax-1/mc-content-localizer")
+            }
+          >
+            友情链接: MC 汉化工坊
           </Button>
         </div>
       </div>
