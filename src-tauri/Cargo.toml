@@ -1,6 +1,6 @@
 [package]
 name = "mc-font-workshop"
-version = "0.1.0"
+version = "0.1.1"
 description = "Minecraft 字体资源包生成器"
 authors = ["mc-font-workshop"]
 edition = "2021"
