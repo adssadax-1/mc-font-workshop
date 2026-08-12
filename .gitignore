@@ -1,0 +1,9 @@
+node_modules/
+dist/
+src-tauri/target/
+src-tauri/gen/
+src-tauri/font-converter.exe
+src-tauri/*.spec
+.reasonix/
+*.local
+.DS_Store

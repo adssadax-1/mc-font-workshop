@@ -1,0 +1,165 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei",
+    "PingFang SC", sans-serif;
+  background: #f5f6f8;
+  color: #333;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 顶栏 */
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+  padding: 0 20px;
+  background: #fff;
+  border-bottom: 1px solid #e6e8eb;
+}
+
+.app-header .brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 17px;
+  font-weight: 600;
+  color: #333;
+}
+
+.app-header .brand .logo {
+  width: 28px;
+  height: 28px;
+}
+
+.app-header .actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #666;
+  font-size: 13px;
+}
+
+/* 布局 */
+.app-body {
+  display: flex;
+  height: calc(100vh - 56px);
+}
+
+.app-sider {
+  width: 190px;
+  flex-shrink: 0;
+  background: #fff;
+  border-right: 1px solid #e6e8eb;
+  padding: 12px 8px;
+}
+
+.app-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px 24px 40px;
+}
+
+/* 步骤项 */
+.step-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  margin-bottom: 4px;
+  border-radius: 12px;
+  cursor: pointer;
+  color: #666;
+  user-select: none;
+  transition: background 0.15s;
+}
+
+.step-item:hover {
+  background: #f0f5fb;
+}
+
+.step-item.active {
+  background: #eaf2fb;
+  color: #4a90d9;
+  font-weight: 600;
+}
+
+.step-item .step-num {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  background: #eef1f4;
+  color: #666;
+  flex-shrink: 0;
+}
+
+.step-item.active .step-num {
+  background: #4a90d9;
+  color: #fff;
+}
+
+.step-item.done .step-num {
+  background: #4a90d9;
+  color: #fff;
+}
+
+/* DropZone */
+.dropzone {
+  border: 2px dashed #cfd8e3;
+  border-radius: 12px;
+  background: #fafbfc;
+  padding: 42px 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.dropzone:hover,
+.dropzone.dragging {
+  border-color: #4a90d9;
+  background: #f0f6fc;
+}
+
+.dropzone .dz-icon {
+  font-size: 40px;
+  margin-bottom: 8px;
+}
+
+.dropzone .dz-title {
+  font-size: 15px;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.dropzone .dz-hint {
+  font-size: 12.5px;
+  color: #999;
+}
+
+/* 字体预览条 */
+.preview-swatch {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.preview-canvas {
+  border: 1px solid #e6e8eb;
+  border-radius: 8px;
+  background: #fff;
+}
